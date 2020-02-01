@@ -99,11 +99,11 @@ body, html {height: 100%}
         <!--<p><input class="w3-input w3-padding-48 w3-border" style="overflow-y:scroll" type="text" placeholder="Description"  name="descrip"></p>
         <p><button class="w3-button" type="submit" value = "submit">CREATE POSTING</button></p>
       </form>-->
-      <form action = "http://127.0.0.1:5000/uploader" method = "POST" 
+      <form action = "/uploader" method = "POST" 
         enctype = "multipart/form-data">
         <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Product Name"  name="pname"></p>
         <p><input class="w3-input w3-padding-48 w3-border" style="overflow-y:scroll" type="text" placeholder="Description"  name="descrip"></p>
-        
+
         <input type='file' name = 'file' onchange="readURL(this);" />
             <!--<img id="blah" src="" alt="Your Image" />-->
         <input type = "Submit"/>

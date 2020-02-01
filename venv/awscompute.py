@@ -13,11 +13,11 @@ def analyze(img):
 	current_catagory = ""
 	current_conf = 0
 	for label in detect_labels(img):
-		#print("{Name} - {Confidence}%".format(**label))
+		print("{Name} - {Confidence}%".format(**label))
 		if do_mapping(label['Name']) != "empty" and label['Confidence'] > current_conf:
 			current_catagory = do_mapping(label['Name'])
 			current_conf = label['Confidence']
-	#print("Conclusion " + current_catagory)
+	print("Conclusion " + current_catagory)
 	return {"cat": current_catagory, "conf": current_conf}
 
 def upload(img):
