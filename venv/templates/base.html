@@ -1,9 +1,8 @@
-{% block title %}Data Entry{% endblock %}
-{% block content %}
 <!DOCTYPE html>
 <html style="scroll-behavior: smooth">
 <head>
 <title>Simplistic Data Entry</title>
+<link rel='icon' type="image/x-icon" href="/static/favicon.ico"/>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -21,24 +20,22 @@
 body,h1,h5 {font-family: "Raleway", sans-serif}
 body, html {height: 100%}
 .bgimg {
-  background-image: url('background3.png');
+  background: url('/static/background3.png');
   min-height: 100%;
   background-position: center;
   background-size: cover;
 }
 
-<link rel='icon' type="image/x-icon" href="favicon.ico" />
-
 </style>
 </head>
 <body>
 
-<div class="bgimg w3-display-container w3-text-white">
+<a href="#bottom"><div class="bgimg w3-display-container w3-text-white">
   <div class="w3-display-middle w3-jumbo">
         <p a href="#bottom" style="float: left; text-align: right"><b>sellsquare&ensp;</b></p> 
-    <image style="float: right" src="logo.png"></image>
+    <image style="float: right" src="/static/bestbuy-logo.png"></image>
   </div>
-</div>
+</div></a>
     <div id="bottom">
     <p style="float: clear; text-align: center; font-size: 20pt; margin-bottom: 0">&ensp;Intelligent Item Tagging for Seamless Categorization</p>
       <div style="margin-left: 40%; margin-right: 50%" class="w3-container w3-xlarge">
@@ -113,4 +110,3 @@ body, html {height: 100%}
 
 </body>
 </html>
-{% endblock %}

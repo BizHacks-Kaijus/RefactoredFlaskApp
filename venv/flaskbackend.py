@@ -14,7 +14,7 @@ TOPIC_DICT  = Content()
 app = Flask(__name__)
 
 #Added this
-app.config['UPLOAD_FOLDER'] = "C:/Users/chess/OneDrive/Documents/Ben/Projects/BizHacks/Flask/venv/Uploads"
+app.config['UPLOAD_FOLDER'] = "./Uploads"
 
 
 @app.errorhandler(404)
@@ -74,4 +74,4 @@ def showResults(category,confidence, productName , image , description):
 
 
 if __name__ == "__main__":
-    app.run()#host='0.0.0.0', port=80
+    app.run(host='0.0.0.0', port=80) #host='0.0.0.0', port=80

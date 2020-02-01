@@ -4,6 +4,7 @@
 <html style="scroll-behavior: smooth">
 <head>
 <title>Simplistic Data Entry- Successful!</title>
+<link rel='icon' type="image/x-icon" href="/static/favicon.ico"/>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -15,13 +16,11 @@
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
 <script src="{{ url_for('static', filename='upload.js') }}"></script>
 
-
-
 <style>
 body,h1,h5 {font-family: "Raleway", sans-serif}
 body, html {height: 100%}
 .bgimg {
-  background-image: url('background3.png');
+  background-image: url('/static/background3.png');
   min-height: 100%;
   background-position: center;
   background-size: cover;
@@ -33,7 +32,7 @@ body, html {height: 100%}
 <div class = "bgimg w3-display-container w3-text-white">
     <div class="w3-display-middle">
         <h1>Success!</h1></br>
-        Your image has been successfully uploaded. </br></br>
+        Your product has been successfully uploaded. </br></br>
         Category Recommendation: {{ output[0] }}</br>
         Confidence Level: {{output[1] }}%</br>
         
