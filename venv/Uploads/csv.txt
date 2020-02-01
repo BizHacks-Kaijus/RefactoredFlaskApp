@@ -1,0 +1,1 @@
+Cameras,99.34,as,C:/Users/chess/OneDrive/Documents/Ben/Projects/BizHacks/Flask/venv/Uploads\cameras1.jpg,s
