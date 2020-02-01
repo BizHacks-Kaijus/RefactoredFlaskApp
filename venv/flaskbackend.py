@@ -2,7 +2,7 @@ from flask import Flask, render_template, flash, request, send_file
 from content_management import Content
 from werkzeug import secure_filename
 import os
-import awscompute
+import awscompute as aws
 
 TOPIC_DICT  = Content()
 # the folder static is for the files for css, img, js files
@@ -24,7 +24,7 @@ def page_not_found(e):
 def method_not_found(e):
     return "error 405"
 
-@app.route('/base/', methods = ["GET", "POST"])
+@app.route('/', methods = ["GET", "POST"])
 def main_page():
     return render_template("base.html")
 
@@ -49,11 +49,11 @@ def upload_file():
    if request.method == 'POST':
       f = request.files['file']
       f.save(os.path.join(app.config['UPLOAD_FOLDER'],secure_filename(f.filename)))
-      analyze(f.filename)
+      aws.analyze("./bizhacks/files/" + f.filename)
       return render_template('successful.html')
 
 
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=80)
+    app.run(host='0.0.0.0', port=80)#
