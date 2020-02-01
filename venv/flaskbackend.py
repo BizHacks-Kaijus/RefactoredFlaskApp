@@ -2,6 +2,7 @@ from flask import Flask, render_template, flash, request, send_file
 from content_management import Content
 from werkzeug import secure_filename
 import os
+import awscompute
 
 TOPIC_DICT  = Content()
 # the folder static is for the files for css, img, js files
@@ -12,7 +13,7 @@ TOPIC_DICT  = Content()
 app = Flask(__name__)
 
 #Added this
-app.config['UPLOAD_FOLDER'] = "C:/Users/chess/OneDrive/Documents/Ben/Projects/BizHacks/Flask/venv/Uploads"
+app.config['UPLOAD_FOLDER'] = "./bizhacks/files"
 
 
 @app.errorhandler(404)
@@ -48,8 +49,11 @@ def upload_file():
    if request.method == 'POST':
       f = request.files['file']
       f.save(os.path.join(app.config['UPLOAD_FOLDER'],secure_filename(f.filename)))
+      analyze(f.filename)
       return render_template('successful.html')
 
 
+
+
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0', port=80)
