@@ -1,0 +1,117 @@
+
+{% block title %}Data Entry{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html style="scroll-behavior: smooth">
+<head>
+<title>Simplistic Data Entry</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+<link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+<script src="{{ url_for('static', filename='upload.js') }}"></script>
+
+
+
+<style>
+body,h1,h5 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+  background-image: url('background3.png');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="bgimg w3-display-container w3-text-white">
+  <div class="w3-display-middle w3-jumbo">
+        <p a href="#bottom" style="float: left; text-align: right"><b>sellsquare&ensp;</b></p> 
+    <image style="float: right" src="logo.png"></image>
+  </div>
+</div>
+    <div id="bottom">
+    <p style="float: clear; text-align: center; font-size: 20pt; margin-bottom: 0">&ensp;Intelligent Item Tagging for Seamless Categorization</p>
+      <div style="margin-left: 40%; margin-right: 50%" class="w3-container w3-xlarge">
+    <p><button onclick="document.getElementById('contact').style.display='block'" class="w3-button w3-black">Make a Posting</button></p>
+        </div>
+    </div>
+
+<!--
+ Menu Modal 
+<div id="menu" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+    <div class="w3-container w3-black w3-display-container">
+      <span onclick="document.getElementById('menu').style.display='none'" class="w3-button w3-display-topright w3-xlarge">x</span>
+      <h1>Starters</h1>
+    </div>
+    <div class="w3-container">
+      <h5>Tomato Soup <b>$2.50</b></h5>
+      <h5>Chicken Salad <b>$3.50</b></h5>
+      <h5>Bread and Butter <b>$1.00</b></h5>
+    </div>
+    <div class="w3-container w3-black">
+      <h1>Main Courses</h1>
+    </div>
+    <div class="w3-container">
+      <h5>Grilled Fish and Potatoes <b>$8.50</b></h5>
+      <h5>Italian Pizza <b>$5.50</b></h5>
+      <h5>Veggie Pasta <b>$4.00</b></h5>
+      <h5>Chicken and Potatoes <b>$6.50</b></h5>
+      <h5>Deluxe Burger <b>$5.00</b></h5>
+    </div>
+    <div class="w3-container w3-black">
+      <h1>Desserts</h1>
+    </div>
+    <div class="w3-container">
+      <h5>Fruit Salad <b>$2.50</b></h5>
+      <h5>Ice cream <b>$2.00</b></h5>
+      <h5>Chocolate Cake <b>$4.00</b></h5>
+      <h5>Cheese <b>$5.50</b></h5>
+    </div>
+  </div>
+</div>
+-->
+
+<!-- Contact Modal -->
+<div id="contact" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+    <div class="w3-container w3-black">
+      <span onclick="document.getElementById('contact').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+      <h1>Contact</h1>
+    </div>
+    <div class="w3-container">
+      <p>Enter the product you would like to place in the market</p>
+
+      <!--<form action="{{ url_for('handle_data')}}" method="post">
+        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Product Name"  name="pname"></p>-->
+        <!--<p><input class="w3-input w3-padding-16 w3-border" type="file" placeholder="Picture"  name="uploadedFile"></p>-->
+        <!--<p><input class="w3-input w3-padding-48 w3-border" style="overflow-y:scroll" type="text" placeholder="Description"  name="descrip"></p>
+        <p><button class="w3-button" type="submit" value = "submit">CREATE POSTING</button></p>
+      </form>-->
+      <form action = "http://127.0.0.1:5000/uploader" method = "POST" 
+        enctype = "multipart/form-data">
+        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Product Name"  name="pname"></p>
+        <p><input class="w3-input w3-padding-48 w3-border" style="overflow-y:scroll" type="text" placeholder="Description"  name="descrip"></p>
+        
+        <input type='file' name = 'file' onchange="readURL(this);" />
+            <!--<img id="blah" src="" alt="Your Image" />-->
+        <input type = "Submit"/>
+        </form>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+{% endblock %}

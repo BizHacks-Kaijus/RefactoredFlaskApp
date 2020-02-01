@@ -1,0 +1,24 @@
+
+{% block title %}Data Entry{% endblock %}
+
+{% block content %}
+<html><body>
+<form action="{{ url_for('handle_data')}}" method="post">
+    Product Name: <input type = "text" name = "pname"><br>
+    Upload File: <input type = "file" name="uploadedFile"> <br>
+    Category: 
+    <select name="category">
+        <option value="Computers">Computers</option>
+        <option value="Mobile">Mobile</option>
+        <option value="Cameras">Cameras</option>
+        <option value="Headphones">Headphones</option>
+        <option value="TVs">TVs</option>
+    </select><br>
+    
+    Description: <input type = "text" name = "descrip"><br>
+    <input type = "submit" value = "Submit">
+</form></body>
+</html>
+
+{% endblock %}
+<!-- {% extends "base.html" %}-->
