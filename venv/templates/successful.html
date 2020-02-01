@@ -1,11 +1,9 @@
 
-{% block title %}Data Entry{% endblock %}
 
-{% block content %}
 <!DOCTYPE html>
 <html style="scroll-behavior: smooth">
 <head>
-<title>Simplistic Data Entry</title>
+<title>Simplistic Data Entry- Successful!</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -28,16 +26,28 @@ body, html {height: 100%}
   background-position: center;
   background-size: cover;
 }
-
-
 </style>
 </head>
 <body>
 
-    <h1>Your Image has been successfully uploaded. <p>It is recommended that you place the product in the category: {{ output[0] }}. </p> </br><p>
-        Confidence: {{output[1] }}%</p> 
-    </br> <a href="/">Back to menu.</a></h1>
+<div class = "bgimg w3-display-container w3-text-white">
+    <div class="w3-display-middle">
+        <h1>Success!</h1></br>
+        Your image has been successfully uploaded. </br></br>
+        Category Recommendation: {{ output[0] }}</br>
+        Confidence Level: {{output[1] }}%</br>
+        
+        </br>
+        <b>What is a Confidence Level?</b>
+        
+        </br>
+        A confidence level refers to the percentage of all possible samples that can be expected to include the true population parameter. 
+    </br>
+</br>Upload another product: <a href="/">Back to Menu</a>
+    </div>
+</div>
+
 
 </body>
 </html>
-{% endblock %}
+
