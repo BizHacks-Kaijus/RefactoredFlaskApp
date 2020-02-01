@@ -34,7 +34,9 @@ body, html {height: 100%}
 </head>
 <body>
 
-    <h1>Your Image has been successfully uploaded. <a href="/">Back to menu.</a></h1>
+    <h1>Your Image has been successfully uploaded. <p>It is recommended that you place the product in the category: {{ output[0] }}. </p> </br><p>
+        Confidence: {{output[1] }}%</p> 
+    </br> <a href="/">Back to menu.</a></h1>
 
 </body>
 </html>

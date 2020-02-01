@@ -53,10 +53,15 @@ def upload_file():
       
 
       da = aws.analyze(os.path.join(app.config['UPLOAD_FOLDER'],secure_filename(f.filename)))
-      #print(da['cat'])
-      #print(da['conf'])
-      return render_template('successful.html')
+      category = (da['cat'])
+      confidence = (da['conf'])
+      output = showResults(category, round(confidence, 2))
+      return render_template('successful.html', output = output)
 
+@app.route('/successful')
+def showResults(x,y):
+    output = x,y
+    return output
 
 
 
