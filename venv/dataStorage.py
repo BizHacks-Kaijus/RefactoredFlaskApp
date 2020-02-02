@@ -2,7 +2,7 @@ import os
 
 def writeData(o):
     try:
-        logFile = r'.Uploads/csv.csv'
+        logFile = r'./Uploads/csv.csv'
 
         csvFile = open(logFile, 'a')
 
