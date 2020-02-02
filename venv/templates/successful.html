@@ -17,7 +17,9 @@
 <script src="{{ url_for('static', filename='upload.js') }}"></script>
 
 <style>
-body,h1,h5 {font-family: "Raleway", sans-serif}
+body,h1,h5 {font-family: "Raleway", sans-serif;
+	font-size: 18pt;
+}
 body, html {height: 100%}
 .bgimg {
   background-image: url('/static/background3.png');
@@ -31,7 +33,7 @@ body, html {height: 100%}
 
 <div class = "bgimg w3-display-container w3-text-white">
     <div class="w3-display-middle">
-        <h1>Success!</h1></br>
+        <h1><b>Success!</b></h1></br>
         Your product has been successfully uploaded. </br></br>
         Category Recommendation: {{ output[0] }}</br>
         Confidence Level: {{output[1] }}%</br>
