@@ -2,9 +2,9 @@ import os
 
 def writeData(o):
     try:
-        logFile = a'.Uploads/csv.csv'
+        logFile = r'.Uploads/csv.csv'
 
-        csvFile = open(logFile, 'w')
+        csvFile = open(logFile, 'a')
 
         csvFile.write(str(o))
 
