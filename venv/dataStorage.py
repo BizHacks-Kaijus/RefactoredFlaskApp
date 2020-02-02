@@ -9,7 +9,6 @@ def writeData(o):
         csvFile.write(str(o))
 
     except Exception as e:
-        csvFile.write("Error.")
         print(e)
     finally:
         csvFile.close()
