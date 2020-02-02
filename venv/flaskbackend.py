@@ -32,6 +32,7 @@ def main_page():
 @app.route('/handle_data', methods =['POST']) 
 def handle_data():
     productName = request.form['pname']
+    priceAmount = request.form['price']
     uploadFile = request.form['uploadedFile']
     categoryType = request.form['category']
     description = request.form['descrip']
@@ -61,13 +62,14 @@ def upload_file():
       productName = request.form['pname']
       image = os.path.join(app.config['UPLOAD_FOLDER'],secure_filename(f.filename))
       description = request.form['descrip']
+      priceAmount = request.form['price']
 
-      output = showResults(category, round(confidence, 2), productName, image, description)
+      output = showResults(category, round(confidence, 2), productName, image, description, priceAmount)
       return render_template('successful.html', output = output)
 
 @app.route('/successful')
-def showResults(category,confidence, productName , image , description):
-    output2 = str(category) + "," + str(confidence) + "," + str(productName) + "," + str(image) + "," + str(description).replace(',', '~')
+def showResults(category,confidence, productName , image , description, priceAmount):
+    output2 = str(category) + "," + str(confidence) + "," + str(productName) + "," + str(image) + "," + str(description) + "," + str(priceAmount).replace(',', '~')
     dataStorage.writeData(output2)
     return category, confidence
 

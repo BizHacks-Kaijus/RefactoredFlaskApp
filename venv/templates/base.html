@@ -13,6 +13,7 @@
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
 <script src="{{ url_for('static', filename='upload.js') }}"></script>
+<script>document.getElementById('submission').disabled = true</script>
 
 
 
@@ -25,6 +26,7 @@ body, html {height: 100%}
   background-position: center;
   background-size: cover;
 }
+#submission{}
 
 </style>
 </head>
@@ -99,10 +101,11 @@ body, html {height: 100%}
         enctype = "multipart/form-data">
         <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Product Name"  name="pname"></p>
         <p><input class="w3-input w3-padding-48 w3-border" style="overflow-y:scroll" type="text" placeholder="Description"  name="descrip"></p>
+        <p><input class="w3-input w3-padding-48 w3-border" style="overflow-y:scroll" type="number" min="0" step = "0.01" placeholder="Price"  name="price"></p>
 
         <input type='file' name = 'file' onchange="readURL(this);" />
             <!--<img id="blah" src="" alt="Your Image" />-->
-        <input type = "Submit"/>
+        <input type = "Submit" id = "submission"/>
         </form>
     </div>
   </div>
